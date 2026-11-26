@@ -1,0 +1,8 @@
+Account Name : SAMPLE SAVER,,,,,,,
+Account Number : 0000000000,,,,,,,
+Date Range : 08/01/2026-10/31/2026,,,,,,,
+Transaction Number,Date,Description,Memo,Amount Debit,Amount Credit,Balance,Check Number
+00000000000011[-5:EST]*1.11*111**Deposit Dividend Dividends Paid,10/31/2026,Deposit Dividend Dividends Paid ,Annual Percentage Yield Earned 0.25% Based on Average Daily Balance of,,0.42,2012.84,
+00000000000012[-5:EST]*1.11*111**COMMENT,09/30/2026,COMMENT ,Congratulations! Your account qualified for dividends.,,,,
+00000000000013[-5:EST]*1.11*111**Withdrawal FID BKG SVC LLC,09/29/2026,Withdrawal FID BKG SVC LLC ,TYPE: MONEYLINE ID: 0000000000 CO: FID BKG SVC LLC NAME: SAMPLE PERSON Entry Class Code: WEB ACH,-1500.00,,2012.42,
+00000000000014[-5:EST]*1.11*111**check,09/18/2026,check ,"Check hold release 09/21/26 500.00 Check hold release 09/22/26 1,500.00 Check Received 2,000.00",,2000.00,3512.42,

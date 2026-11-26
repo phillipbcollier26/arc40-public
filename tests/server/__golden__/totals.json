@@ -1,0 +1,1865 @@
+{
+ "budget 2026-11-01": {
+  "month": "2026-11-01",
+  "categories": [
+   {
+    "id": 4,
+    "name": "Housing",
+    "group": "Essentials",
+    "color": "bronze",
+    "spentCents": 0,
+    "limitCents": 0,
+    "isOverride": false
+   },
+   {
+    "id": 5,
+    "name": "Food",
+    "group": "Essentials",
+    "color": "copper",
+    "spentCents": 9593,
+    "limitCents": 12000,
+    "isOverride": false
+   },
+   {
+    "id": 6,
+    "name": "Utilities",
+    "group": "Essentials",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 7,
+    "name": "Phone & Internet",
+    "group": "Essentials",
+    "color": "silver",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 8,
+    "name": "Transportation",
+    "group": "Essentials",
+    "color": "bronze",
+    "spentCents": 1000,
+    "limitCents": 6000,
+    "isOverride": false
+   },
+   {
+    "id": 9,
+    "name": "Health",
+    "group": "Essentials",
+    "color": "sage",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 10,
+    "name": "Dining Out",
+    "group": "Lifestyle",
+    "color": "copper",
+    "spentCents": 4140,
+    "limitCents": 6000,
+    "isOverride": false
+   },
+   {
+    "id": 11,
+    "name": "Entertainment",
+    "group": "Lifestyle",
+    "color": "gold",
+    "spentCents": 3652,
+    "limitCents": 4000,
+    "isOverride": false
+   },
+   {
+    "id": 12,
+    "name": "Shopping",
+    "group": "Lifestyle",
+    "color": "silver",
+    "spentCents": 0,
+    "limitCents": 5000,
+    "isOverride": false
+   },
+   {
+    "id": 13,
+    "name": "Subscriptions",
+    "group": "Lifestyle",
+    "color": "platinum",
+    "spentCents": 1199,
+    "limitCents": 1500,
+    "isOverride": false
+   },
+   {
+    "id": 14,
+    "name": "Personal Care",
+    "group": "Lifestyle",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 15,
+    "name": "Travel",
+    "group": "Lifestyle",
+    "color": "gold",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 16,
+    "name": "Education",
+    "group": "School",
+    "color": "silver",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 17,
+    "name": "Ref Gear & Fees",
+    "group": "Refereeing",
+    "color": "gold",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 18,
+    "name": "Gifts Given",
+    "group": "Other",
+    "color": "bronze",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 19,
+    "name": "Fees & Charges",
+    "group": "Other",
+    "color": "garnet",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 20,
+    "name": "Miscellaneous",
+    "group": "Other",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   }
+  ],
+  "uncategorizedCents": 1850,
+  "uncategorizedIncomeCents": 5000,
+  "totals": {
+   "limitCents": 34500,
+   "spentCents": 21434,
+   "budgetedSpentCents": 19584
+  },
+  "income": {
+   "thisMonthCents": 36577,
+   "avgCents": 76592,
+   "avgMonths": 3,
+   "monthsUsed": 3,
+   "overAverage": false
+  },
+  "savingsRateBp": 4140
+ },
+ "budget 2026-10-01": {
+  "month": "2026-10-01",
+  "categories": [
+   {
+    "id": 4,
+    "name": "Housing",
+    "group": "Essentials",
+    "color": "bronze",
+    "spentCents": 0,
+    "limitCents": 0,
+    "isOverride": false
+   },
+   {
+    "id": 5,
+    "name": "Food",
+    "group": "Essentials",
+    "color": "copper",
+    "spentCents": 5162,
+    "limitCents": 12000,
+    "isOverride": false
+   },
+   {
+    "id": 6,
+    "name": "Utilities",
+    "group": "Essentials",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 7,
+    "name": "Phone & Internet",
+    "group": "Essentials",
+    "color": "silver",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 8,
+    "name": "Transportation",
+    "group": "Essentials",
+    "color": "bronze",
+    "spentCents": 1000,
+    "limitCents": 6000,
+    "isOverride": false
+   },
+   {
+    "id": 9,
+    "name": "Health",
+    "group": "Essentials",
+    "color": "sage",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 10,
+    "name": "Dining Out",
+    "group": "Lifestyle",
+    "color": "copper",
+    "spentCents": 4001,
+    "limitCents": 6000,
+    "isOverride": false
+   },
+   {
+    "id": 11,
+    "name": "Entertainment",
+    "group": "Lifestyle",
+    "color": "gold",
+    "spentCents": 0,
+    "limitCents": 4000,
+    "isOverride": false
+   },
+   {
+    "id": 12,
+    "name": "Shopping",
+    "group": "Lifestyle",
+    "color": "silver",
+    "spentCents": 3204,
+    "limitCents": 5000,
+    "isOverride": false
+   },
+   {
+    "id": 13,
+    "name": "Subscriptions",
+    "group": "Lifestyle",
+    "color": "platinum",
+    "spentCents": 1199,
+    "limitCents": 1500,
+    "isOverride": false
+   },
+   {
+    "id": 14,
+    "name": "Personal Care",
+    "group": "Lifestyle",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 15,
+    "name": "Travel",
+    "group": "Lifestyle",
+    "color": "gold",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 16,
+    "name": "Education",
+    "group": "School",
+    "color": "silver",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 17,
+    "name": "Ref Gear & Fees",
+    "group": "Refereeing",
+    "color": "gold",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 18,
+    "name": "Gifts Given",
+    "group": "Other",
+    "color": "bronze",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 19,
+    "name": "Fees & Charges",
+    "group": "Other",
+    "color": "garnet",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 20,
+    "name": "Miscellaneous",
+    "group": "Other",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   }
+  ],
+  "uncategorizedCents": 0,
+  "uncategorizedIncomeCents": 0,
+  "totals": {
+   "limitCents": 34500,
+   "spentCents": 14566,
+   "budgetedSpentCents": 14566
+  },
+  "income": {
+   "thisMonthCents": 74475,
+   "avgCents": 56511,
+   "avgMonths": 3,
+   "monthsUsed": 3,
+   "overAverage": false
+  },
+  "savingsRateBp": 8044
+ },
+ "budget 2026-03-01": {
+  "month": "2026-03-01",
+  "categories": [
+   {
+    "id": 4,
+    "name": "Housing",
+    "group": "Essentials",
+    "color": "bronze",
+    "spentCents": 0,
+    "limitCents": 0,
+    "isOverride": false
+   },
+   {
+    "id": 5,
+    "name": "Food",
+    "group": "Essentials",
+    "color": "copper",
+    "spentCents": 8364,
+    "limitCents": 12000,
+    "isOverride": false
+   },
+   {
+    "id": 6,
+    "name": "Utilities",
+    "group": "Essentials",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 7,
+    "name": "Phone & Internet",
+    "group": "Essentials",
+    "color": "silver",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 8,
+    "name": "Transportation",
+    "group": "Essentials",
+    "color": "bronze",
+    "spentCents": 6400,
+    "limitCents": 6000,
+    "isOverride": false
+   },
+   {
+    "id": 9,
+    "name": "Health",
+    "group": "Essentials",
+    "color": "sage",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 10,
+    "name": "Dining Out",
+    "group": "Lifestyle",
+    "color": "copper",
+    "spentCents": 1668,
+    "limitCents": 6000,
+    "isOverride": false
+   },
+   {
+    "id": 11,
+    "name": "Entertainment",
+    "group": "Lifestyle",
+    "color": "gold",
+    "spentCents": 0,
+    "limitCents": 4000,
+    "isOverride": false
+   },
+   {
+    "id": 12,
+    "name": "Shopping",
+    "group": "Lifestyle",
+    "color": "silver",
+    "spentCents": 0,
+    "limitCents": 5000,
+    "isOverride": false
+   },
+   {
+    "id": 13,
+    "name": "Subscriptions",
+    "group": "Lifestyle",
+    "color": "platinum",
+    "spentCents": 1199,
+    "limitCents": 1500,
+    "isOverride": false
+   },
+   {
+    "id": 14,
+    "name": "Personal Care",
+    "group": "Lifestyle",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 15,
+    "name": "Travel",
+    "group": "Lifestyle",
+    "color": "gold",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 16,
+    "name": "Education",
+    "group": "School",
+    "color": "silver",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 17,
+    "name": "Ref Gear & Fees",
+    "group": "Refereeing",
+    "color": "gold",
+    "spentCents": 4256,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 18,
+    "name": "Gifts Given",
+    "group": "Other",
+    "color": "bronze",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 19,
+    "name": "Fees & Charges",
+    "group": "Other",
+    "color": "garnet",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 20,
+    "name": "Miscellaneous",
+    "group": "Other",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   }
+  ],
+  "uncategorizedCents": 0,
+  "uncategorizedIncomeCents": 0,
+  "totals": {
+   "limitCents": 34500,
+   "spentCents": 21887,
+   "budgetedSpentCents": 17631
+  },
+  "income": {
+   "thisMonthCents": 49986,
+   "avgCents": 15694,
+   "avgMonths": 3,
+   "monthsUsed": 3,
+   "overAverage": true
+  },
+  "savingsRateBp": 5621
+ },
+ "budget 2025-12-01": {
+  "month": "2025-12-01",
+  "categories": [
+   {
+    "id": 4,
+    "name": "Housing",
+    "group": "Essentials",
+    "color": "bronze",
+    "spentCents": 0,
+    "limitCents": 0,
+    "isOverride": false
+   },
+   {
+    "id": 5,
+    "name": "Food",
+    "group": "Essentials",
+    "color": "copper",
+    "spentCents": 6896,
+    "limitCents": 12000,
+    "isOverride": false
+   },
+   {
+    "id": 6,
+    "name": "Utilities",
+    "group": "Essentials",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 7,
+    "name": "Phone & Internet",
+    "group": "Essentials",
+    "color": "silver",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 8,
+    "name": "Transportation",
+    "group": "Essentials",
+    "color": "bronze",
+    "spentCents": 9200,
+    "limitCents": 6000,
+    "isOverride": false
+   },
+   {
+    "id": 9,
+    "name": "Health",
+    "group": "Essentials",
+    "color": "sage",
+    "spentCents": 1778,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 10,
+    "name": "Dining Out",
+    "group": "Lifestyle",
+    "color": "copper",
+    "spentCents": 3281,
+    "limitCents": 6000,
+    "isOverride": false
+   },
+   {
+    "id": 11,
+    "name": "Entertainment",
+    "group": "Lifestyle",
+    "color": "gold",
+    "spentCents": 1904,
+    "limitCents": 4000,
+    "isOverride": false
+   },
+   {
+    "id": 12,
+    "name": "Shopping",
+    "group": "Lifestyle",
+    "color": "silver",
+    "spentCents": 6170,
+    "limitCents": 5000,
+    "isOverride": false
+   },
+   {
+    "id": 13,
+    "name": "Subscriptions",
+    "group": "Lifestyle",
+    "color": "platinum",
+    "spentCents": 1199,
+    "limitCents": 1500,
+    "isOverride": false
+   },
+   {
+    "id": 14,
+    "name": "Personal Care",
+    "group": "Lifestyle",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 15,
+    "name": "Travel",
+    "group": "Lifestyle",
+    "color": "gold",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 16,
+    "name": "Education",
+    "group": "School",
+    "color": "silver",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 17,
+    "name": "Ref Gear & Fees",
+    "group": "Refereeing",
+    "color": "gold",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 18,
+    "name": "Gifts Given",
+    "group": "Other",
+    "color": "bronze",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 19,
+    "name": "Fees & Charges",
+    "group": "Other",
+    "color": "garnet",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   },
+   {
+    "id": 20,
+    "name": "Miscellaneous",
+    "group": "Other",
+    "color": "pewter",
+    "spentCents": 0,
+    "limitCents": null,
+    "isOverride": false
+   }
+  ],
+  "uncategorizedCents": 0,
+  "uncategorizedIncomeCents": 0,
+  "totals": {
+   "limitCents": 34500,
+   "spentCents": 30428,
+   "budgetedSpentCents": 28650
+  },
+  "income": {
+   "thisMonthCents": 13515,
+   "avgCents": 61652,
+   "avgMonths": 3,
+   "monthsUsed": 3,
+   "overAverage": false
+  },
+  "savingsRateBp": -12514
+ },
+ "cashflow24": {
+  "months": [
+   {
+    "month": "2024-12-01",
+    "incomeCents": 7503,
+    "spendingCents": 11484,
+    "giftCents": 20000,
+    "savingsRateBp": -5306
+   },
+   {
+    "month": "2025-01-01",
+    "incomeCents": 7101,
+    "spendingCents": 34949,
+    "giftCents": 0,
+    "savingsRateBp": -39217
+   },
+   {
+    "month": "2025-02-01",
+    "incomeCents": 9178,
+    "spendingCents": 29164,
+    "giftCents": 0,
+    "savingsRateBp": -21776
+   },
+   {
+    "month": "2025-03-01",
+    "incomeCents": 47755,
+    "spendingCents": 28777,
+    "giftCents": 0,
+    "savingsRateBp": 3974
+   },
+   {
+    "month": "2025-04-01",
+    "incomeCents": 69638,
+    "spendingCents": 11631,
+    "giftCents": 0,
+    "savingsRateBp": 8330
+   },
+   {
+    "month": "2025-05-01",
+    "incomeCents": 67813,
+    "spendingCents": 16772,
+    "giftCents": 10000,
+    "savingsRateBp": 7527
+   },
+   {
+    "month": "2025-06-01",
+    "incomeCents": 18373,
+    "spendingCents": 13869,
+    "giftCents": 0,
+    "savingsRateBp": 2451
+   },
+   {
+    "month": "2025-07-01",
+    "incomeCents": 28150,
+    "spendingCents": 18896,
+    "giftCents": 0,
+    "savingsRateBp": 3287
+   },
+   {
+    "month": "2025-08-01",
+    "incomeCents": 59766,
+    "spendingCents": 38691,
+    "giftCents": 0,
+    "savingsRateBp": 3526
+   },
+   {
+    "month": "2025-09-01",
+    "incomeCents": 71678,
+    "spendingCents": 20363,
+    "giftCents": 0,
+    "savingsRateBp": 7159
+   },
+   {
+    "month": "2025-10-01",
+    "incomeCents": 74161,
+    "spendingCents": 19284,
+    "giftCents": 0,
+    "savingsRateBp": 7400
+   },
+   {
+    "month": "2025-11-01",
+    "incomeCents": 39117,
+    "spendingCents": 22841,
+    "giftCents": 0,
+    "savingsRateBp": 4161
+   },
+   {
+    "month": "2025-12-01",
+    "incomeCents": 13515,
+    "spendingCents": 30428,
+    "giftCents": 20000,
+    "savingsRateBp": -12514
+   },
+   {
+    "month": "2026-01-01",
+    "incomeCents": 12967,
+    "spendingCents": 44518,
+    "giftCents": 0,
+    "savingsRateBp": -24332
+   },
+   {
+    "month": "2026-02-01",
+    "incomeCents": 20601,
+    "spendingCents": 15085,
+    "giftCents": 0,
+    "savingsRateBp": 2678
+   },
+   {
+    "month": "2026-03-01",
+    "incomeCents": 49986,
+    "spendingCents": 21887,
+    "giftCents": 0,
+    "savingsRateBp": 5621
+   },
+   {
+    "month": "2026-04-01",
+    "incomeCents": 67878,
+    "spendingCents": 20229,
+    "giftCents": 0,
+    "savingsRateBp": 7020
+   },
+   {
+    "month": "2026-05-01",
+    "incomeCents": 47327,
+    "spendingCents": 27810,
+    "giftCents": 10000,
+    "savingsRateBp": 4124
+   },
+   {
+    "month": "2026-06-01",
+    "incomeCents": 12440,
+    "spendingCents": 23728,
+    "giftCents": 0,
+    "savingsRateBp": -9074
+   },
+   {
+    "month": "2026-07-01",
+    "incomeCents": 14230,
+    "spendingCents": 22376,
+    "giftCents": 0,
+    "savingsRateBp": -5725
+   },
+   {
+    "month": "2026-08-01",
+    "incomeCents": 63960,
+    "spendingCents": 29154,
+    "giftCents": 0,
+    "savingsRateBp": 5442
+   },
+   {
+    "month": "2026-09-01",
+    "incomeCents": 91342,
+    "spendingCents": 28639,
+    "giftCents": 0,
+    "savingsRateBp": 6865
+   },
+   {
+    "month": "2026-10-01",
+    "incomeCents": 74475,
+    "spendingCents": 14566,
+    "giftCents": 0,
+    "savingsRateBp": 8044
+   },
+   {
+    "month": "2026-11-01",
+    "incomeCents": 36577,
+    "spendingCents": 21434,
+    "giftCents": 0,
+    "savingsRateBp": 4140
+   }
+  ],
+  "ytd": {
+   "incomeCents": 491783,
+   "spendingCents": 269426,
+   "giftCents": 10000,
+   "savingsRateBp": 4521,
+   "year": 2026,
+   "uncategorizedIncomeCents": 5000
+  },
+  "gig": {
+   "payCents": 477200,
+   "costsCents": 15836,
+   "netCents": 461364,
+   "setAsideBp": 0,
+   "setAsideOnNet": true,
+   "setAsideCents": 0
+  }
+ },
+ "cashflow12": {
+  "months": [
+   {
+    "month": "2025-12-01",
+    "incomeCents": 13515,
+    "spendingCents": 30428,
+    "giftCents": 20000,
+    "savingsRateBp": -12514
+   },
+   {
+    "month": "2026-01-01",
+    "incomeCents": 12967,
+    "spendingCents": 44518,
+    "giftCents": 0,
+    "savingsRateBp": -24332
+   },
+   {
+    "month": "2026-02-01",
+    "incomeCents": 20601,
+    "spendingCents": 15085,
+    "giftCents": 0,
+    "savingsRateBp": 2678
+   },
+   {
+    "month": "2026-03-01",
+    "incomeCents": 49986,
+    "spendingCents": 21887,
+    "giftCents": 0,
+    "savingsRateBp": 5621
+   },
+   {
+    "month": "2026-04-01",
+    "incomeCents": 67878,
+    "spendingCents": 20229,
+    "giftCents": 0,
+    "savingsRateBp": 7020
+   },
+   {
+    "month": "2026-05-01",
+    "incomeCents": 47327,
+    "spendingCents": 27810,
+    "giftCents": 10000,
+    "savingsRateBp": 4124
+   },
+   {
+    "month": "2026-06-01",
+    "incomeCents": 12440,
+    "spendingCents": 23728,
+    "giftCents": 0,
+    "savingsRateBp": -9074
+   },
+   {
+    "month": "2026-07-01",
+    "incomeCents": 14230,
+    "spendingCents": 22376,
+    "giftCents": 0,
+    "savingsRateBp": -5725
+   },
+   {
+    "month": "2026-08-01",
+    "incomeCents": 63960,
+    "spendingCents": 29154,
+    "giftCents": 0,
+    "savingsRateBp": 5442
+   },
+   {
+    "month": "2026-09-01",
+    "incomeCents": 91342,
+    "spendingCents": 28639,
+    "giftCents": 0,
+    "savingsRateBp": 6865
+   },
+   {
+    "month": "2026-10-01",
+    "incomeCents": 74475,
+    "spendingCents": 14566,
+    "giftCents": 0,
+    "savingsRateBp": 8044
+   },
+   {
+    "month": "2026-11-01",
+    "incomeCents": 36577,
+    "spendingCents": 21434,
+    "giftCents": 0,
+    "savingsRateBp": 4140
+   }
+  ],
+  "ytd": {
+   "incomeCents": 491783,
+   "spendingCents": 269426,
+   "giftCents": 10000,
+   "savingsRateBp": 4521,
+   "year": 2026,
+   "uncategorizedIncomeCents": 5000
+  },
+  "gig": {
+   "payCents": 477200,
+   "costsCents": 15836,
+   "netCents": 461364,
+   "setAsideBp": 0,
+   "setAsideOnNet": true,
+   "setAsideCents": 0
+  }
+ },
+ "dashboard": {
+  "from": "2025-12-01",
+  "today": "2026-11-11",
+  "spendingByCategory": [
+   {
+    "categoryId": 5,
+    "name": "Food",
+    "group": "Essentials",
+    "color": "copper",
+    "cents": 87207
+   },
+   {
+    "categoryId": 8,
+    "name": "Transportation",
+    "group": "Essentials",
+    "color": "bronze",
+    "cents": 55000
+   },
+   {
+    "categoryId": 10,
+    "name": "Dining Out",
+    "group": "Lifestyle",
+    "color": "copper",
+    "cents": 51152
+   },
+   {
+    "categoryId": 12,
+    "name": "Shopping",
+    "group": "Lifestyle",
+    "color": "silver",
+    "cents": 26822
+   },
+   {
+    "categoryId": 16,
+    "name": "Education",
+    "group": "School",
+    "color": "silver",
+    "cents": 19834
+   },
+   {
+    "categoryId": 17,
+    "name": "Ref Gear & Fees",
+    "group": "Refereeing",
+    "color": "gold",
+    "cents": 15836
+   },
+   {
+    "categoryId": 11,
+    "name": "Entertainment",
+    "group": "Lifestyle",
+    "color": "gold",
+    "cents": 15605
+   },
+   {
+    "categoryId": 13,
+    "name": "Subscriptions",
+    "group": "Lifestyle",
+    "color": "platinum",
+    "cents": 14388
+   },
+   {
+    "categoryId": 9,
+    "name": "Health",
+    "group": "Essentials",
+    "color": "sage",
+    "cents": 12160
+   },
+   {
+    "categoryId": null,
+    "name": "Uncategorized",
+    "group": "Other",
+    "color": "pewter",
+    "cents": 1850
+   }
+  ],
+  "daily": [
+   {
+    "date": "2025-11-12",
+    "cents": 3512
+   },
+   {
+    "date": "2025-11-14",
+    "cents": 4100
+   },
+   {
+    "date": "2025-11-19",
+    "cents": 2186
+   },
+   {
+    "date": "2025-11-24",
+    "cents": 4100
+   },
+   {
+    "date": "2025-11-25",
+    "cents": 4100
+   },
+   {
+    "date": "2025-11-28",
+    "cents": 1631
+   },
+   {
+    "date": "2025-11-29",
+    "cents": 2013
+   },
+   {
+    "date": "2025-12-05",
+    "cents": 3137
+   },
+   {
+    "date": "2025-12-07",
+    "cents": 4100
+   },
+   {
+    "date": "2025-12-09",
+    "cents": 3759
+   },
+   {
+    "date": "2025-12-11",
+    "cents": 6170
+   },
+   {
+    "date": "2025-12-21",
+    "cents": 3682
+   },
+   {
+    "date": "2025-12-27",
+    "cents": 1000
+   },
+   {
+    "date": "2025-12-28",
+    "cents": 1921
+   },
+   {
+    "date": "2025-12-29",
+    "cents": 1199
+   },
+   {
+    "date": "2025-12-30",
+    "cents": 4100
+   },
+   {
+    "date": "2025-12-31",
+    "cents": 1360
+   },
+   {
+    "date": "2026-01-06",
+    "cents": 1752
+   },
+   {
+    "date": "2026-01-07",
+    "cents": 1424
+   },
+   {
+    "date": "2026-01-08",
+    "cents": 4100
+   },
+   {
+    "date": "2026-01-10",
+    "cents": 1898
+   },
+   {
+    "date": "2026-01-12",
+    "cents": 3200
+   },
+   {
+    "date": "2026-01-14",
+    "cents": 13063
+   },
+   {
+    "date": "2026-01-20",
+    "cents": 5396
+   },
+   {
+    "date": "2026-01-28",
+    "cents": 2199
+   },
+   {
+    "date": "2026-01-29",
+    "cents": 3521
+   },
+   {
+    "date": "2026-01-31",
+    "cents": 7965
+   },
+   {
+    "date": "2026-02-04",
+    "cents": 5586
+   },
+   {
+    "date": "2026-02-06",
+    "cents": 1473
+   },
+   {
+    "date": "2026-02-11",
+    "cents": 1686
+   },
+   {
+    "date": "2026-02-21",
+    "cents": 6340
+   },
+   {
+    "date": "2026-03-02",
+    "cents": 1793
+   },
+   {
+    "date": "2026-03-13",
+    "cents": 6400
+   },
+   {
+    "date": "2026-03-18",
+    "cents": 1358
+   },
+   {
+    "date": "2026-03-19",
+    "cents": 2641
+   },
+   {
+    "date": "2026-03-24",
+    "cents": 2572
+   },
+   {
+    "date": "2026-03-26",
+    "cents": 1668
+   },
+   {
+    "date": "2026-03-28",
+    "cents": 1199
+   },
+   {
+    "date": "2026-03-29",
+    "cents": 4256
+   },
+   {
+    "date": "2026-04-10",
+    "cents": 3193
+   },
+   {
+    "date": "2026-04-11",
+    "cents": 1765
+   },
+   {
+    "date": "2026-04-12",
+    "cents": 4589
+   },
+   {
+    "date": "2026-04-16",
+    "cents": 4044
+   },
+   {
+    "date": "2026-04-18",
+    "cents": 1951
+   },
+   {
+    "date": "2026-04-22",
+    "cents": 1199
+   },
+   {
+    "date": "2026-04-27",
+    "cents": 1000
+   },
+   {
+    "date": "2026-04-30",
+    "cents": 2488
+   },
+   {
+    "date": "2026-05-02",
+    "cents": 3350
+   },
+   {
+    "date": "2026-05-03",
+    "cents": 793
+   },
+   {
+    "date": "2026-05-06",
+    "cents": 9155
+   },
+   {
+    "date": "2026-05-10",
+    "cents": 1199
+   },
+   {
+    "date": "2026-05-18",
+    "cents": 3540
+   },
+   {
+    "date": "2026-05-19",
+    "cents": 2218
+   },
+   {
+    "date": "2026-05-20",
+    "cents": 3200
+   },
+   {
+    "date": "2026-05-22",
+    "cents": 2074
+   },
+   {
+    "date": "2026-05-26",
+    "cents": 2281
+   },
+   {
+    "date": "2026-06-09",
+    "cents": 2772
+   },
+   {
+    "date": "2026-06-14",
+    "cents": 1202
+   },
+   {
+    "date": "2026-06-15",
+    "cents": 4828
+   },
+   {
+    "date": "2026-06-19",
+    "cents": 4986
+   },
+   {
+    "date": "2026-06-21",
+    "cents": 1190
+   },
+   {
+    "date": "2026-06-23",
+    "cents": 3200
+   },
+   {
+    "date": "2026-06-24",
+    "cents": 1199
+   },
+   {
+    "date": "2026-06-28",
+    "cents": 2351
+   },
+   {
+    "date": "2026-06-29",
+    "cents": 1000
+   },
+   {
+    "date": "2026-06-30",
+    "cents": 1000
+   },
+   {
+    "date": "2026-07-01",
+    "cents": 3381
+   },
+   {
+    "date": "2026-07-05",
+    "cents": 4512
+   },
+   {
+    "date": "2026-07-07",
+    "cents": 1482
+   },
+   {
+    "date": "2026-07-12",
+    "cents": 1199
+   },
+   {
+    "date": "2026-07-21",
+    "cents": 1916
+   },
+   {
+    "date": "2026-07-28",
+    "cents": 1629
+   },
+   {
+    "date": "2026-07-29",
+    "cents": 6589
+   },
+   {
+    "date": "2026-07-30",
+    "cents": 1668
+   },
+   {
+    "date": "2026-08-03",
+    "cents": 2254
+   },
+   {
+    "date": "2026-08-12",
+    "cents": 6771
+   },
+   {
+    "date": "2026-08-16",
+    "cents": 6000
+   },
+   {
+    "date": "2026-08-19",
+    "cents": 8688
+   },
+   {
+    "date": "2026-08-21",
+    "cents": 1720
+   },
+   {
+    "date": "2026-08-24",
+    "cents": 1522
+   },
+   {
+    "date": "2026-08-29",
+    "cents": 1199
+   },
+   {
+    "date": "2026-08-31",
+    "cents": 1000
+   },
+   {
+    "date": "2026-09-01",
+    "cents": 1803
+   },
+   {
+    "date": "2026-09-03",
+    "cents": 1000
+   },
+   {
+    "date": "2026-09-11",
+    "cents": 2199
+   },
+   {
+    "date": "2026-09-16",
+    "cents": 3976
+   },
+   {
+    "date": "2026-09-17",
+    "cents": 2221
+   },
+   {
+    "date": "2026-09-18",
+    "cents": 8780
+   },
+   {
+    "date": "2026-09-20",
+    "cents": 2991
+   },
+   {
+    "date": "2026-09-23",
+    "cents": 3951
+   },
+   {
+    "date": "2026-09-30",
+    "cents": 1718
+   },
+   {
+    "date": "2026-10-02",
+    "cents": 1199
+   },
+   {
+    "date": "2026-10-05",
+    "cents": 0
+   },
+   {
+    "date": "2026-10-07",
+    "cents": 2441
+   },
+   {
+    "date": "2026-10-13",
+    "cents": 925
+   },
+   {
+    "date": "2026-10-17",
+    "cents": 1000
+   },
+   {
+    "date": "2026-10-19",
+    "cents": 1796
+   },
+   {
+    "date": "2026-10-23",
+    "cents": 5499
+   },
+   {
+    "date": "2026-10-26",
+    "cents": 1677
+   },
+   {
+    "date": "2026-10-27",
+    "cents": 2324
+   },
+   {
+    "date": "2026-11-05",
+    "cents": 2857
+   },
+   {
+    "date": "2026-11-08",
+    "cents": 1850
+   },
+   {
+    "date": "2026-11-10",
+    "cents": 1000
+   },
+   {
+    "date": "2026-11-11",
+    "cents": 15727
+   }
+  ],
+  "calendarFrom": "2025-11-12",
+  "incomeByPayer": [
+   {
+    "payer": "High School Assignor",
+    "cents": 140900
+   },
+   {
+    "payer": "Rec League",
+    "cents": 135600
+   },
+   {
+    "payer": "Summer Tournament",
+    "cents": 110500
+   },
+   {
+    "payer": "County Youth Soccer",
+    "cents": 102600
+   }
+  ],
+  "incomeBySource": {
+   "months": [
+    "2025-12-01",
+    "2026-01-01",
+    "2026-02-01",
+    "2026-03-01",
+    "2026-04-01",
+    "2026-05-01",
+    "2026-06-01",
+    "2026-07-01",
+    "2026-08-01",
+    "2026-09-01",
+    "2026-10-01",
+    "2026-11-01"
+   ],
+   "sources": [
+    {
+     "name": "Refereeing",
+     "color": "gold",
+     "cents": [
+      12400,
+      12500,
+      20100,
+      49000,
+      66900,
+      46500,
+      11000,
+      12800,
+      63000,
+      90800,
+      73500,
+      31100
+     ]
+    },
+    {
+     "name": "Interest",
+     "color": "sage",
+     "cents": [
+      1115,
+      467,
+      501,
+      986,
+      978,
+      827,
+      1440,
+      1430,
+      960,
+      542,
+      975,
+      477
+     ]
+    },
+    {
+     "name": "Uncategorized",
+     "color": "pewter",
+     "cents": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5000
+     ]
+    }
+   ]
+  }
+ },
+ "goals": {
+  "roth": {
+   "year": 2026,
+   "years": [
+    2026
+   ],
+   "hasRothAccount": true,
+   "limitCents": 750000,
+   "deadline": "2027-04-15",
+   "contributedCents": 150000,
+   "remainingCents": 600000,
+   "earnedIncomeCents": 477200
+  },
+  "emergency": {
+   "avgMonthlySpendingCents": 24379,
+   "monthsUsed": 6,
+   "essentialsCents": 0,
+   "targetCents": 146274,
+   "savingsCents": 314031,
+   "savingsAccounts": [
+    {
+     "id": 2,
+     "name": "High-Yield Savings",
+     "balanceCents": 314031
+    }
+   ]
+  }
+ },
+ "goals2025": {
+  "roth": {
+   "year": 2025,
+   "years": [
+    2026
+   ],
+   "hasRothAccount": true,
+   "limitCents": null,
+   "deadline": null,
+   "contributedCents": 125000,
+   "remainingCents": null,
+   "earnedIncomeCents": 495500
+  }
+ },
+ "txAll": {
+  "total": 490,
+  "sums": {
+   "incomeCents": 1005531,
+   "spendingCents": 566575,
+   "transferCents": 658200,
+   "giftCents": 60000
+  }
+ },
+ "tx type income": {
+  "total": 180,
+  "sums": {
+   "incomeCents": 1005531,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx type expense": {
+  "total": 232,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 566575,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx type transfer": {
+  "total": 74,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 658200,
+   "giftCents": 0
+  }
+ },
+ "tx type gift": {
+  "total": 4,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 60000
+  }
+ },
+ "txUncategorized": {
+  "total": 2,
+  "sums": {
+   "incomeCents": 5000,
+   "spendingCents": 1850,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Refereeing": {
+  "total": 155,
+  "sums": {
+   "incomeCents": 979700,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Interest": {
+  "total": 24,
+  "sums": {
+   "incomeCents": 20831,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Other Income": {
+  "total": 0,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Housing": {
+  "total": 0,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Food": {
+  "total": 69,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 181904,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Utilities": {
+  "total": 0,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Phone & Internet": {
+  "total": 0,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Transportation": {
+  "total": 47,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 107500,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Health": {
+  "total": 3,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 12160,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Dining Out": {
+  "total": 56,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 92113,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Entertainment": {
+  "total": 12,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 33441,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Shopping": {
+  "total": 10,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 38911,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Subscriptions": {
+  "total": 24,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 28776,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Personal Care": {
+  "total": 0,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Travel": {
+  "total": 0,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Education": {
+  "total": 4,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 39371,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Ref Gear & Fees": {
+  "total": 6,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 30549,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Gifts Given": {
+  "total": 0,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Fees & Charges": {
+  "total": 0,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "tx cat Miscellaneous": {
+  "total": 0,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ },
+ "txRange": {
+  "total": 123,
+  "sums": {
+   "incomeCents": 211199,
+   "spendingCents": 153257,
+   "transferCents": 190200,
+   "giftCents": 10000
+  }
+ },
+ "txSearch": {
+  "total": 0,
+  "sums": {
+   "incomeCents": 0,
+   "spendingCents": 0,
+   "transferCents": 0,
+   "giftCents": 0
+  }
+ }
+}

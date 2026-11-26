@@ -1,0 +1,231 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-0);
+  color: var(--text-1);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+/* Ambient background: soft color fields + a faint technical grid. */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ambient::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(40% 35% at 15% 10%, var(--ambient-1), transparent 70%),
+    radial-gradient(35% 30% at 85% 15%, var(--ambient-2), transparent 70%),
+    radial-gradient(45% 40% at 70% 95%, var(--ambient-3), transparent 70%);
+  animation: drift 28s ease-in-out infinite alternate;
+}
+.ambient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 75%);
+  opacity: var(--grid-opacity);
+}
+@keyframes drift {
+  to {
+    transform: translate3d(3%, 2%, 0) scale(1.05);
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  color: var(--text-0);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.num {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  color: var(--text-0);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+.gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glass card */
+.card {
+  position: relative;
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(18px) saturate(140%);
+  padding: 24px;
+}
+.card::before {
+  /* top hairline highlight */
+  content: '';
+  position: absolute;
+  inset: 0 16px auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--highlight), transparent);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-strong);
+  background: var(--bg-3);
+  color: var(--text-0);
+  font: 500 14px var(--font-body);
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    background var(--dur-fast),
+    border-color var(--dur-fast),
+    box-shadow var(--dur-med);
+}
+.btn,
+a.btn {
+  text-decoration: none;
+}
+a {
+  color: var(--gold);
+  text-underline-offset: 3px;
+}
+a:hover {
+  color: var(--accent-text);
+}
+.btn:hover {
+  border-color: var(--line-strong);
+  background: var(--bg-2);
+}
+.btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-primary {
+  border: none;
+  color: var(--on-accent);
+  font-weight: 600;
+  background: var(--metal-gold);
+  box-shadow: var(--shadow-button);
+}
+.btn-primary:hover {
+  box-shadow: var(--shadow-button-hover);
+  background: var(--metal-gold);
+}
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-2);
+}
+.btn-ghost:hover {
+  color: var(--text-0);
+  background: var(--bg-3);
+  border-color: var(--line);
+}
+
+/* Inputs */
+.field {
+  display: grid;
+  gap: 8px;
+}
+.input {
+  height: 44px;
+  width: 100%;
+  padding: 0 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-strong);
+  background: var(--input-bg);
+  color: var(--text-0);
+  font: 15px var(--font-body);
+  transition:
+    border-color var(--dur-fast),
+    box-shadow var(--dur-fast);
+}
+.input::placeholder {
+  color: var(--text-3);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: var(--focus-ring);
+}
+
+.error-text {
+  color: var(--garnet);
+  font-size: 13px;
+}
+.ok-text {
+  color: var(--sage);
+  font-size: 13px;
+}
+
+/* Entrance animation used across pages */
+.rise {
+  animation: rise var(--dur-slow) var(--ease-out) both;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
+}

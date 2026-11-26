@@ -1,0 +1,319 @@
+/*
+ * Arc40 design tokens. EVERY color, radius, shadow and font in the app comes
+ * from here. Components never hard-code colors.
+ *
+ * Two themes share the same token names:
+ *   - Dark ("black and metals", the default): near-black surfaces, gold as the
+ *     lead accent, silver and bronze as secondary metals, warm white text.
+ *   - Light ("Platinum"): soft silver-grey page, pale platinum cards, deeper
+ *     metals so text meets WCAG AA (4.5:1) on cards and on the page.
+ * Gains and losses use sage and garnet in both. Never purple or cyan.
+ * The theme is chosen by data-theme on <html> (web/src/lib/themeMode.ts).
+ * A test checks that both themes define exactly the same color tokens.
+ */
+
+/* ---------- Shared: shape, type, motion (same in both themes) ---------- */
+:root {
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+
+  --font-display: 'Sora Variable', 'Inter Variable', system-ui, sans-serif;
+  --font-body: 'Inter Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 140ms;
+  --dur-med: 320ms;
+  --dur-slow: 700ms;
+}
+
+/* ---------- Dark (default) ---------- */
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* Surfaces (warm near-black) */
+  --bg-0: #070707;           /* page */
+  --bg-1: #0d0d0e;           /* sidebar, deep panels */
+  --bg-2: #121213;           /* cards */
+  --bg-3: #1b1b1d;           /* raised / hover */
+  --glass: rgba(20, 20, 22, 0.72);
+  --glass-strong: rgba(22, 22, 24, 0.9);
+  --input-bg: rgba(0, 0, 0, 0.55);
+  --sidebar-bg: linear-gradient(180deg, rgba(14, 14, 15, 0.95), rgba(7, 7, 7, 0.95));
+  --hover-bg: rgba(232, 214, 170, 0.04);
+  --line: rgba(232, 214, 170, 0.08);        /* champagne hairline */
+  --line-strong: rgba(232, 214, 170, 0.16);
+  --highlight: rgba(255, 244, 214, 0.12);   /* top edge shine on cards */
+
+  /* Text (warm whites and greys) */
+  --text-0: #f6f2e9;         /* headline numbers */
+  --text-1: #cfcac0;         /* body */
+  --text-2: #8d8981;         /* secondary */
+  --text-3: #5b5852;         /* hints */
+
+  /* Metals */
+  --gold: #d4af37;
+  --gold-bright: #f0d27a;
+  --gold-deep: #9c7a26;
+  --gold-soft: rgba(212, 175, 55, 0.12);
+  --silver: #c4c8cf;
+  --platinum: #e8eaee;
+  --pewter: #868b94;
+  --silver-soft: rgba(196, 200, 207, 0.1);
+  --bronze: #c2854f;
+  --copper: #b56d48;
+  --bronze-soft: rgba(194, 133, 79, 0.13);
+
+  /* Money semantics */
+  --sage: #8fbf9a;           /* gains, income, done */
+  --sage-soft: rgba(143, 191, 154, 0.12);
+  --garnet: #d0605a;         /* spending, losses, errors */
+  --garnet-soft: rgba(208, 96, 90, 0.12);
+  --accent: var(--gold);
+  --positive: var(--sage);
+  --negative: var(--garnet);
+  --on-accent: #1a1406;      /* text on gold buttons */
+  --accent-text: #f0d27a;    /* gold TEXT (notices, highlights, link hover): brightest gold on black */
+
+  /* Metallic gradients */
+  --metal-gold: linear-gradient(135deg, #f6dc8c 0%, #d4af37 42%, #9c7a26 100%);
+  --metal-gold-text: linear-gradient(135deg, #f6dc8c 0%, #d4af37 42%, #9c7a26 100%); /* big gold words (Wrapped) */
+  --metal-silver: linear-gradient(135deg, #f2f3f5 0%, #c4c8cf 45%, #7c818a 100%);
+  --metal-bronze: linear-gradient(135deg, #e3ad7a 0%, #c2854f 45%, #7f4f2b 100%);
+  --metal-text: linear-gradient(135deg, #f2f3f5 0%, #c4c8cf 45%, #7c818a 100%); /* big metallic numbers */
+  --brand-gradient: linear-gradient(120deg, #f6dc8c 0%, #d4af37 50%, #c2854f 100%);
+  --sheen: linear-gradient(105deg, transparent 35%, rgba(255, 236, 180, 0.22) 47%, rgba(232, 234, 238, 0.32) 50%, rgba(255, 236, 180, 0.22) 53%, transparent 65%);
+
+  /* Ambient background light */
+  --ambient-1: rgba(212, 175, 55, 0.09);   /* gold, top left */
+  --ambient-2: rgba(196, 200, 207, 0.05);  /* silver, top right */
+  --ambient-3: rgba(194, 133, 79, 0.06);   /* bronze, bottom */
+  --grid-opacity: 0.55;
+
+  /* Charts: treemap tiles and the spending calendar's heat scale (low -> high spending) */
+  --tile-alpha-from: 0.85;
+  --tile-alpha-to: 0.45;
+  --tile-text: #f6f2e9;
+  --tile-text-2: #ece7dc;
+  --tile-text-shadow: rgba(0, 0, 0, 0.6);   /* keeps labels readable on pale silver tiles */
+  --heat-1: #8d623d;
+  --heat-2: #d4af37;
+  --heat-3: #f0d27a;            /* brightest = most spent on black */
+
+  /* Money river gems (V2 Phase 4): a light face and a deep edge per stone. No purple or cyan stones. */
+  --gem-diamond: #f4f1ea;
+  --gem-diamond-deep: #9a9ea6;
+  --gem-emerald: #3fbf7f;
+  --gem-emerald-deep: #12603d;
+  --gem-ruby: #e0475a;
+  --gem-ruby-deep: #7a1424;
+  --gem-topaz: #f2b84b;
+  --gem-topaz-deep: #9c5f14;
+  --gem-amber: #e8902a;
+  --gem-amber-deep: #85470e;
+  --gem-sparkle: #fffaf0;
+
+  /* Trophy metals (Trophies Round 1). Real metal colors, the same in both themes: hi / mid / lo stops. */
+  --tr-iron-hi: #a4a7ad;
+  --tr-iron: #62666d;
+  --tr-iron-lo: #2a2c31;
+  --tr-copper-hi: #f2b693;
+  --tr-copper: #b8673f;
+  --tr-copper-lo: #63301a;
+  --tr-bronze-hi: #e6b17f;
+  --tr-bronze: #b07642;
+  --tr-bronze-lo: #5e3a1c;
+  --tr-silver-hi: #f8f9fb;
+  --tr-silver: #b9bec6;
+  --tr-silver-lo: #686d76;
+  --tr-gold-hi: #fbe49c;
+  --tr-gold: #d4af37;
+  --tr-gold-lo: #84661a;
+  --tr-rose-hi: #f9d6c6;
+  --tr-rose: #d99a85;
+  --tr-rose-lo: #8a5143;
+  --tr-platinum-hi: #fcfcfd;
+  --tr-platinum: #d6dade;
+  --tr-platinum-lo: #8b9098;
+  --tr-obsidian-hi: #4c4b50;
+  --tr-obsidian: #17161a;
+  --tr-obsidian-lo: #050506;
+  --tr-arc-core: #fff6d8;
+  --tr-arc-glow: rgba(255, 214, 120, 0.6);
+  --tr-sheen: rgba(255, 255, 255, 0.7);
+  --tr-sheen-clear: rgba(255, 255, 255, 0);
+  --tr-engrave: rgba(24, 16, 4, 0.62);
+  --tr-engrave-hi: rgba(255, 250, 235, 0.55);
+  --tr-mask: #ffffff;
+  /* Trophy case surfaces (follow the theme) */
+  --tr-off: #1d1d20;
+  --tr-off-edge: rgba(232, 214, 170, 0.07);
+  --tr-edge: rgba(0, 0, 0, 0.55);
+  --tr-shadow: rgba(0, 0, 0, 0.6);
+  --tr-shelf: linear-gradient(180deg, rgba(255, 244, 214, 0.1), rgba(255, 244, 214, 0.02));
+  --tr-shelf-edge: rgba(255, 244, 214, 0.22);
+  --tr-case: radial-gradient(120% 90% at 50% 0%, rgba(212, 175, 55, 0.06), rgba(7, 7, 7, 0) 60%);
+  /* Trophies Round 2: the unlock pop-up is a dark stage in BOTH themes (like the metals, same values in both) */
+  --tu-backdrop: rgba(5, 5, 7, 0.965);
+  --tu-text: #f6f0e2;
+  --tu-text-2: #cbc3b2;
+  --tu-line: rgba(255, 244, 214, 0.2);
+  --tu-chip-bg: rgba(255, 244, 214, 0.07);
+  --tu-dot: rgba(255, 244, 214, 0.24);
+  --river-ribbon-opacity: 0.2;
+  --river-ribbon-hover: 0.5;
+
+  /* Depth */
+  --shadow-card: 0 1px 0 rgba(255, 244, 214, 0.04) inset, 0 24px 60px -28px rgba(0, 0, 0, 0.9);
+  --shadow-glow: 0 0 44px -10px rgba(212, 175, 55, 0.4);
+  --shadow-button: 0 8px 28px -12px rgba(212, 175, 55, 0.7);
+  --shadow-button-hover: 0 10px 36px -10px rgba(212, 175, 55, 0.9);
+  --focus-ring: 0 0 0 3px rgba(212, 175, 55, 0.3);
+}
+
+/* ---------- Light: "Platinum" ---------- */
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  /* Surfaces (soft silver-grey page, pale platinum cards) */
+  --bg-0: #e4e5e9;           /* page */
+  --bg-1: #ecedf0;           /* sidebar, deep panels */
+  --bg-2: #f8f8f9;           /* cards */
+  --bg-3: #e9eaee;           /* raised / hover */
+  --glass: rgba(250, 250, 251, 0.8);
+  --glass-strong: rgba(252, 252, 253, 0.95);
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --sidebar-bg: linear-gradient(180deg, rgba(244, 245, 247, 0.94), rgba(232, 233, 237, 0.94));
+  --hover-bg: rgba(127, 96, 14, 0.06);
+  --line: rgba(70, 60, 35, 0.12);           /* warm graphite hairline */
+  --line-strong: rgba(70, 60, 35, 0.22);
+  --highlight: rgba(255, 255, 255, 0.95);
+
+  /* Text (graphite) */
+  --text-0: #17171a;
+  --text-1: #34353b;
+  --text-2: #53555d;
+  --text-3: #63656f;
+
+  /* Metals, deepened for contrast on light surfaces */
+  --gold: #7f600e;
+  --gold-bright: #a5801c;
+  --gold-deep: #5e4609;
+  --gold-soft: rgba(127, 96, 14, 0.1);
+  --silver: #5c636d;
+  --platinum: #767d88;       /* chart lines and decoration only (3.9:1), never body text */
+  --pewter: #5f646c;
+  --silver-soft: rgba(92, 99, 109, 0.1);
+  --bronze: #8a5524;
+  --copper: #97492a;
+  --bronze-soft: rgba(138, 85, 36, 0.12);
+
+  /* Money semantics */
+  --sage: #356f44;
+  --sage-soft: rgba(53, 111, 68, 0.11);
+  --garnet: #a3302b;
+  --garnet-soft: rgba(163, 48, 43, 0.1);
+  --accent: var(--gold);
+  --positive: var(--sage);
+  --negative: var(--garnet);
+  --on-accent: #1a1406;
+  --accent-text: #6a4f0a;    /* gold TEXT: deep antique gold, AA on the page, cards and gold-tinted notices */
+
+  /* Metallic gradients (polished, lit from the top left) */
+  --metal-gold: linear-gradient(135deg, #f1d98e 0%, #cfa643 45%, #9a7419 100%);
+  --metal-gold-text: linear-gradient(135deg, #b88a1f 0%, #8a6512 45%, #5e4609 100%); /* deeper so big gold words read on light */
+  --metal-silver: linear-gradient(135deg, #d9dce1 0%, #8f959e 45%, #5c636d 100%); /* pewter-toned so it shows on light */
+  --metal-bronze: linear-gradient(135deg, #ebc095 0%, #c88d5a 45%, #8f5c36 100%);
+  --metal-text: linear-gradient(135deg, #3b3e45 0%, #17181b 45%, #4d525b 100%);
+  --brand-gradient: linear-gradient(120deg, #a5801c 0%, #7f600e 50%, #8a5524 100%);
+  --sheen: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.55) 47%, rgba(241, 217, 142, 0.45) 50%, rgba(255, 255, 255, 0.55) 53%, transparent 65%);
+
+  /* Ambient background light (subtle on a light page) */
+  --ambient-1: rgba(176, 138, 36, 0.12);
+  --ambient-2: rgba(120, 128, 140, 0.1);
+  --ambient-3: rgba(150, 95, 45, 0.08);
+  --grid-opacity: 0.45;
+
+  /* Charts: deeper tiles with white labels; the heat scale gets DARKER as spending grows */
+  --tile-alpha-from: 0.96;
+  --tile-alpha-to: 0.74;
+  --tile-text: #ffffff;
+  --tile-text-2: rgba(255, 255, 255, 0.86);
+  --tile-text-shadow: rgba(23, 23, 26, 0.35);
+  --heat-1: #d9c39a;
+  --heat-2: #a5801c;
+  --heat-3: #5e4609;            /* deepest = most spent on a light page */
+
+  /* Money river gems: deeper stones so they read on a light page. */
+  --gem-diamond: #ffffff;
+  --gem-diamond-deep: #707782;
+  --gem-emerald: #1f9a5e;
+  --gem-emerald-deep: #0b4a2e;
+  --gem-ruby: #c42d42;
+  --gem-ruby-deep: #650d1b;
+  --gem-topaz: #d6961f;
+  --gem-topaz-deep: #7c4a0b;
+  --gem-amber: #c8741a;
+  --gem-amber-deep: #643408;
+  --gem-sparkle: #ffffff;
+
+  /* Trophy metals (Trophies Round 1). Real metal colors, the same in both themes: hi / mid / lo stops. */
+  --tr-iron-hi: #a4a7ad;
+  --tr-iron: #62666d;
+  --tr-iron-lo: #2a2c31;
+  --tr-copper-hi: #f2b693;
+  --tr-copper: #b8673f;
+  --tr-copper-lo: #63301a;
+  --tr-bronze-hi: #e6b17f;
+  --tr-bronze: #b07642;
+  --tr-bronze-lo: #5e3a1c;
+  --tr-silver-hi: #f8f9fb;
+  --tr-silver: #b9bec6;
+  --tr-silver-lo: #686d76;
+  --tr-gold-hi: #fbe49c;
+  --tr-gold: #d4af37;
+  --tr-gold-lo: #84661a;
+  --tr-rose-hi: #f9d6c6;
+  --tr-rose: #d99a85;
+  --tr-rose-lo: #8a5143;
+  --tr-platinum-hi: #fcfcfd;
+  --tr-platinum: #d6dade;
+  --tr-platinum-lo: #8b9098;
+  --tr-obsidian-hi: #4c4b50;
+  --tr-obsidian: #17161a;
+  --tr-obsidian-lo: #050506;
+  --tr-arc-core: #fff6d8;
+  --tr-arc-glow: rgba(255, 214, 120, 0.6);
+  --tr-sheen: rgba(255, 255, 255, 0.7);
+  --tr-sheen-clear: rgba(255, 255, 255, 0);
+  --tr-engrave: rgba(24, 16, 4, 0.62);
+  --tr-engrave-hi: rgba(255, 250, 235, 0.55);
+  --tr-mask: #ffffff;
+  /* Trophy case surfaces (follow the theme): pale metals get a deeper edge and shadow on light */
+  --tr-off: #d2d4d9;
+  --tr-off-edge: rgba(70, 60, 35, 0.1);
+  --tr-edge: rgba(40, 32, 15, 0.42);
+  --tr-shadow: rgba(40, 32, 15, 0.3);
+  --tr-shelf: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(214, 216, 222, 0.6));
+  --tr-shelf-edge: rgba(70, 60, 35, 0.22);
+  --tr-case: radial-gradient(120% 90% at 50% 0%, rgba(127, 96, 14, 0.07), rgba(228, 229, 233, 0) 60%);
+  /* Trophies Round 2: the unlock pop-up is a dark stage in BOTH themes (like the metals, same values in both) */
+  --tu-backdrop: rgba(5, 5, 7, 0.965);
+  --tu-text: #f6f0e2;
+  --tu-text-2: #cbc3b2;
+  --tu-line: rgba(255, 244, 214, 0.2);
+  --tu-chip-bg: rgba(255, 244, 214, 0.07);
+  --tu-dot: rgba(255, 244, 214, 0.24);
+  --river-ribbon-opacity: 0.28;
+  --river-ribbon-hover: 0.6;
+
+  /* Depth: soft graphite shadows instead of black */
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.9) inset, 0 18px 44px -26px rgba(40, 36, 25, 0.32);
+  --shadow-glow: 0 0 40px -12px rgba(127, 96, 14, 0.35);
+  --shadow-button: 0 8px 22px -12px rgba(127, 96, 14, 0.55);
+  --shadow-button-hover: 0 10px 28px -10px rgba(127, 96, 14, 0.7);
+  --focus-ring: 0 0 0 3px rgba(127, 96, 14, 0.28);
+}

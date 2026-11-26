@@ -1,0 +1,3 @@
+#!/bin/sh
+# Arc40 safety check: refuse to commit databases, bank CSVs, backups or exports.
+exec node scripts/check-no-data.mjs --staged

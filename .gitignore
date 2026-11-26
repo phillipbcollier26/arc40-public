@@ -1,0 +1,35 @@
+# ---- Private financial data: NEVER commit ----
+data/
+demo-data/
+backups/
+exports/
+imports/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.csv
+*.tsv
+*.ofx
+*.qfx
+*.qif
+*.xlsx
+*.xls
+*.zip
+*.pdf
+# Arc40's own exports: arc40.json holds every table; an unzipped export folder holds it all
+arc40*.json
+arc40-export-*/
+# Fake test fixtures are the one exception
+!tests/fixtures/**
+
+# ---- Build and tooling ----
+node_modules/
+web/dist/
+test-results/
+playwright-report/
+coverage/
+*.tsbuildinfo
+.env
+.env.*
+.DS_Store

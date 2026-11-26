@@ -1,0 +1,957 @@
+/* Trophy Case (Trophies Round 1): trophy drawings, states and motion. Colors come only from tokens.css. */
+
+.trophy {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  flex: none;
+  --tr-rx: 0deg;
+  --tr-ry: 0deg;
+  --tr-sx: -40px;
+  outline: none;
+}
+.trophy.is-clickable {
+  cursor: pointer;
+}
+.trophy:focus-visible .tr-tilt {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.tr-tilt {
+  position: relative;
+  z-index: 1;
+  transform: perspective(520px) rotateX(var(--tr-rx, 0deg)) rotateY(var(--tr-ry, 0deg));
+  transition: transform 260ms var(--ease-out), opacity var(--dur-med) ease;
+  transform-style: preserve-3d;
+}
+.trophy.is-hover .tr-tilt {
+  transition: transform 90ms linear;
+}
+
+.tr-svg {
+  display: block;
+  overflow: visible;
+  /* The trophy's box takes the clicks; the drawing (and its masked shine strip) never does. */
+  pointer-events: none;
+}
+.trophy.is-earned .tr-svg {
+  filter: drop-shadow(0 0 0.7px var(--tr-edge)) drop-shadow(0 7px 7px var(--tr-shadow));
+}
+
+/* Text on metal */
+.tr-engraving,
+.tr-letter {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+.tr-letter {
+  font-weight: 700;
+}
+
+/* The silhouette mask: everything white */
+.tr-maskpaint * {
+  fill: var(--tr-mask) !important;
+  stroke: var(--tr-mask) !important;
+}
+.tr-maskpaint [fill='none'] {
+  fill: none !important;
+}
+
+/* Off: a flat ghost. On: the ghost plus line art in the rank's color. */
+.tr-ghost {
+  fill: var(--tr-off);
+}
+.trophy.is-off .tr-tilt {
+  opacity: 0.85;
+}
+.tr-line {
+  opacity: 0.72;
+}
+.tr-line * {
+  fill: none !important;
+  stroke: var(--tr-accent, var(--gold)) !important;
+  stroke-width: 0.55px !important;
+}
+.tr-line text,
+.tr-line .tr-engraving {
+  stroke-width: 0.3px !important;
+}
+
+/* Earned: a sheen that sweeps across now and then (each trophy on its own timer) */
+.tr-sheen {
+  transform: translateX(-60px) skewX(-18deg);
+  opacity: 0.85;
+}
+.trophy.is-earned .tr-sheen {
+  animation: tr-sweep var(--tr-period, 11s) ease-in-out var(--tr-delay, 0s) infinite;
+}
+.trophy.is-earned.is-hover .tr-sheen {
+  animation: none;
+  transform: translateX(var(--tr-sx, -40px)) skewX(-18deg);
+  transition: transform 110ms linear;
+}
+@keyframes tr-sweep {
+  0% {
+    transform: translateX(-60px) skewX(-18deg);
+  }
+  12% {
+    transform: translateX(190px) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(190px) skewX(-18deg);
+  }
+}
+.tr-core-glow {
+  animation: tr-glow 3.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes tr-glow {
+  50% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+}
+
+/* The soft light on the shelf below an earned trophy; it glows in the rank's color on hover */
+.tr-floor {
+  width: 92%;
+  height: 16px;
+  margin-top: -9px;
+  border-radius: 50%;
+  opacity: 0;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--tr-accent, var(--gold)) 55%, transparent), transparent);
+  transition: opacity var(--dur-med) ease;
+}
+.trophy.is-earned .tr-floor {
+  opacity: 0.55;
+}
+.trophy.is-hover .tr-floor {
+  opacity: 1;
+}
+
+/* Hover label: rank and date */
+.tr-tip {
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translate(-50%, 4px);
+  white-space: nowrap;
+  font-size: 11px;
+  color: var(--text-1);
+  background: var(--glass-strong);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 2px 9px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  transition: opacity var(--dur-fast) ease, transform var(--dur-fast) ease;
+}
+.trophy.is-hover .tr-tip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.tr-new {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--bg-0);
+  background: var(--metal-gold);
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tr-tilt {
+    transform: none !important;
+  }
+  .trophy.is-earned .tr-sheen,
+  .tr-core-glow {
+    animation: none;
+  }
+  .tr-sheen {
+    opacity: 0;
+  }
+}
+
+/* Dev-only preview (web/src/trophies/TrophyPreview.tsx) */
+.tr-preview {
+  display: grid;
+  gap: 18px;
+}
+.tr-preview-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 14px;
+  align-items: flex-end;
+  padding: 18px 14px 26px;
+  background: var(--tr-case);
+  border-bottom: 2px solid var(--tr-shelf-edge);
+}
+.tr-preview-cell {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.tr-preview-cell small {
+  color: var(--text-2);
+  font-size: 11px;
+  max-width: 120px;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------- Trophy Case page */
+.tc-counts {
+  display: flex;
+  gap: 10px;
+}
+.tc-count {
+  display: grid;
+  justify-items: center;
+  min-width: 78px;
+  padding: 8px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--glass);
+}
+.tc-count .num {
+  font-size: 24px;
+  color: var(--text-0);
+}
+/* Round 4: The Arc in its own spot at the top of the case. */
+.tc-arc {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 22px;
+  align-items: center;
+  background: var(--tr-case), var(--bg-2);
+}
+.tc-arc-art {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+.tc-arc-text {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.tc-arc-text p {
+  margin: 0;
+}
+.tc-arc-title {
+  margin: 0;
+  font-size: 26px;
+  background: var(--metal-gold-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tc-arc-earned {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+.tc-arc-link {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+.tc-arc-progress {
+  display: grid;
+  gap: 6px;
+  max-width: 460px;
+}
+.tc-arc-left {
+  font-size: 22px;
+  color: var(--text-1);
+}
+@media (max-width: 560px) {
+  .tc-arc {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    text-align: center;
+  }
+  .tc-arc-progress {
+    justify-items: center;
+    width: 100%;
+  }
+}
+.tc-message {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-strong);
+  background: var(--gold-soft);
+  color: var(--text-1);
+}
+
+.tc-closest-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.tc-closest-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-width: 0;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--bg-3);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.tc-closest-item:hover,
+.tc-closest-item:focus-visible {
+  border-color: var(--line-strong);
+  outline: none;
+}
+.tc-closest-text {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  flex: 1;
+  justify-items: start;
+}
+.tc-closest-name {
+  color: var(--text-0);
+  font-weight: 600;
+}
+.tc-closest-text .tc-bar {
+  width: 100%;
+}
+
+.tc-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--line-strong);
+  overflow: hidden;
+}
+.tc-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--metal-gold);
+}
+
+.tc-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+}
+.tc-chiprow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+}
+.tc-chip {
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--text-2);
+  font: 500 12px var(--font-body);
+  cursor: pointer;
+}
+.tc-chip.is-on {
+  color: var(--accent-text);
+  border-color: var(--gold);
+  background: var(--gold-soft);
+}
+
+.tc-shelf-card {
+  padding-bottom: 6px;
+  overflow: hidden;
+}
+.tc-shelf-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.tc-shelf-title {
+  font-size: 20px;
+}
+.tc-shelf {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 10px -6px 0;
+  padding: 14px 10px 30px;
+  background: var(--tr-case);
+  scroll-snap-type: x proximity;
+  position: relative;
+}
+/* The lit glass shelf the trophies stand on */
+.tc-shelf {
+  /* glass strip right under the trophies' bases (14px padding + the 172px trophy row) */
+  background-image: var(--tr-case), linear-gradient(var(--tr-shelf-edge), var(--tr-shelf-edge)), var(--tr-shelf);
+  background-size: 100% 100%, 100% 1px, 100% 12px;
+  background-position: 0 0, 0 180px, 0 181px;
+  background-repeat: no-repeat;
+  background-attachment: local;
+}
+.tc-item {
+  display: grid;
+  grid-template-rows: 172px auto auto;
+  align-items: end;
+  justify-items: center;
+  gap: 4px;
+  width: 128px;
+  flex: none;
+  scroll-snap-align: start;
+}
+.tc-item-name {
+  align-self: start;
+  min-height: 2.6em;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--text-1);
+  text-align: center;
+  line-height: 1.3;
+}
+.tc-item-progress {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  justify-items: center;
+  text-align: center;
+}
+.tc-item-progress .tc-bar {
+  width: 86%;
+}
+.tc-item-progress .hint {
+  font-size: 11px;
+}
+.tc-empty {
+  padding: 16px 4px 18px;
+}
+
+/* ---------------------------------------------------------------- close-up */
+.tc-closeup-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  animation: tc-fade var(--dur-med) ease;
+}
+.tc-closeup {
+  position: relative;
+  width: min(860px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  padding: 28px;
+  outline: none;
+}
+.tc-close-x {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.tc-close-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.tc-close-art {
+  display: grid;
+  justify-items: center;
+  padding: 18px 0 26px;
+  border-radius: var(--radius-lg);
+  background-image: var(--tr-case), var(--tr-shelf);
+  background-size: 100% 100%, 100% 14px;
+  background-position: 0 0, 0 calc(100% - 20px);
+  background-repeat: no-repeat;
+}
+.tc-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tc-rank-chip {
+  color: var(--text-1);
+}
+.tc-new-chip {
+  color: var(--accent-text);
+  border-color: var(--gold);
+}
+.tc-close-name {
+  font-size: 28px;
+}
+.tc-earned-date {
+  font: 600 18px var(--font-display);
+  color: var(--accent-text);
+}
+.tc-sentence {
+  margin-top: 6px;
+  color: var(--text-1);
+}
+.tc-records ol {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+  color: var(--text-2);
+}
+.tc-records li.is-current {
+  color: var(--text-0);
+  font-weight: 600;
+}
+.tc-progress-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.tc-blocked {
+  color: var(--accent-text);
+}
+.tc-next {
+  display: grid;
+  gap: 6px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+.tc-story {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+.tc-story svg {
+  width: 100%;
+  height: 110px;
+}
+.tc-story-axis {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-2);
+}
+.tc-ask {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  padding: 10px 12px 12px;
+  display: grid;
+  gap: 8px;
+}
+.tc-ask legend {
+  padding: 0 6px;
+  color: var(--text-1);
+  font-weight: 600;
+}
+.tc-option {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+.tc-option input {
+  accent-color: var(--gold);
+  margin-top: 3px;
+}
+.tc-option.is-picked {
+  border-color: var(--gold);
+  background: var(--gold-soft);
+}
+.tc-option > span {
+  display: grid;
+  gap: 2px;
+}
+.tc-option strong {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.tc-suggested {
+  justify-self: start;
+  height: 20px;
+  color: var(--accent-text);
+  border-color: var(--gold);
+}
+.tc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 6px;
+}
+.btn-danger {
+  color: var(--garnet);
+  border-color: var(--garnet);
+}
+@keyframes tc-fade {
+  from {
+    opacity: 0;
+  }
+}
+@media (max-width: 760px) {
+  .tc-close-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tc-counts {
+    width: 100%;
+  }
+  .tc-count {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* ------------------------------------------------------------------ Round 2: the unlock pop-up (TrophyUnlock.tsx) */
+.tu-root {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 56px 16px 32px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--tu-backdrop);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: var(--tu-text);
+  animation: tu-fade 320ms ease-out both;
+}
+.tu-rays {
+  position: fixed;
+  left: 50%;
+  top: 36%;
+  width: 170vmax;
+  height: 170vmax;
+  pointer-events: none;
+  background: repeating-conic-gradient(from 0deg, color-mix(in srgb, var(--tu-ray, var(--gold)) 13%, transparent) 0deg 5deg, transparent 5deg 15deg);
+  -webkit-mask-image: radial-gradient(circle, var(--tu-text) 0%, transparent 46%);
+  mask-image: radial-gradient(circle, var(--tu-text) 0%, transparent 46%);
+  transform: translate(-50%, -50%);
+  animation: tu-spin 80s linear infinite, tu-fade 1200ms ease-out both;
+}
+.tu-spot {
+  position: fixed;
+  left: 50%;
+  top: 36%;
+  width: min(560px, 120vw);
+  height: min(560px, 120vw);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--tu-ray, var(--gold)) 38%, transparent), transparent);
+  animation: tu-fade 900ms ease-out both;
+}
+.tu-root.is-arc .tu-spot {
+  width: min(680px, 140vw);
+  height: min(680px, 140vw);
+  background: radial-gradient(closest-side, var(--tr-arc-glow), color-mix(in srgb, var(--tu-ray, var(--gold)) 30%, transparent) 45%, transparent);
+}
+.tu-mute {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+}
+.tu-root .btn-ghost {
+  color: var(--tu-text);
+}
+.tu-root .btn-ghost:hover {
+  background: var(--tu-chip-bg);
+}
+.tu-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: min(620px, 100%);
+  min-width: 0;
+  text-align: center;
+}
+.tu-trophy {
+  width: 220px;
+  max-width: 70vw;
+  filter: drop-shadow(0 18px 30px var(--tr-shadow));
+  animation: tu-rise 1000ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms both;
+}
+.tu-trophy svg {
+  width: 100%;
+  height: auto;
+}
+/* The sheen sweeps across once the trophy has risen, then again every few seconds */
+.tu-trophy .tr-sheen {
+  animation: tr-sweep 4.6s ease-in-out 1.2s infinite;
+}
+.tu-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+  animation: tu-up 600ms ease-out 700ms both;
+}
+.tu-kicker {
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--tu-text-2);
+}
+.tu-name {
+  margin: 0;
+  max-width: 100%;
+  font-size: clamp(28px, 5.4vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+  background: linear-gradient(180deg, var(--tu-hi, var(--tr-gold-hi)) 0%, var(--tu-mid, var(--tr-gold)) 55%, var(--tu-lo, var(--tr-gold-lo)) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tu-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.tu-chip {
+  padding: 4px 12px;
+  border: 1px solid var(--tu-line);
+  border-radius: 999px;
+  background: var(--tu-chip-bg);
+  font-size: 12.5px;
+  color: var(--tu-text);
+}
+.tu-fact {
+  margin: 4px 0 0;
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--tu-text);
+}
+.tu-note {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--tu-text-2);
+}
+.tu-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--tu-text-2);
+}
+.tu-progress .num {
+  color: var(--tu-text-2);
+}
+.tu-dots {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 260px;
+}
+.tu-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--tu-dot);
+}
+.tu-dot.is-done {
+  background: var(--tu-lo, var(--tr-gold-lo));
+}
+.tu-dot.is-on {
+  background: var(--tu-mid, var(--tr-gold));
+  box-shadow: 0 0 0 3px var(--tu-chip-bg);
+}
+.tu-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+@keyframes tu-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes tu-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes tu-rise {
+  from {
+    opacity: 0;
+    transform: translateY(46px) scale(0.8);
+  }
+}
+@keyframes tu-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+/* Reduced motion (the Mac setting): no rays, no rise, no sweep; everything only fades */
+.tu-root.is-reduced .tu-trophy,
+.tu-root.is-reduced .tu-text {
+  animation: tu-fade 450ms ease-out both;
+}
+.tu-root.is-reduced .tr-sheen {
+  animation: none;
+}
+.tc-play {
+  margin-left: auto;
+}
+
+/* ------------------------------------------------------------------ Round 2: the Dashboard shelf (TrophyShelf.tsx) */
+.dash-trophies {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  overflow: hidden;
+}
+.dt-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  min-width: 0;
+}
+.dt-open {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 13px;
+  color: var(--accent-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.dt-open:hover {
+  text-decoration: underline;
+}
+.dt-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+  gap: 18px;
+  align-items: center;
+  min-width: 0;
+}
+.dash-trophies.is-first .dt-body {
+  grid-template-columns: minmax(0, 520px);
+}
+.dt-shelf {
+  margin: 0 -6px;
+  min-width: 0;
+}
+.dt-meta {
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.3;
+}
+.dt-item .tc-item-name {
+  min-height: 0;
+}
+.dt-closest {
+  display: grid;
+  gap: 10px;
+  align-content: center;
+  min-width: 0;
+}
+.dt-first {
+  margin: 0;
+  color: var(--text-1);
+}
+.dt-closest-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  min-width: 0;
+  padding: 10px 12px;
+  text-align: left;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--bg-3);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.dt-closest-item:hover,
+.dt-closest-item:focus-visible {
+  border-color: var(--line-strong);
+  outline: none;
+}
+.dt-closest-text {
+  display: grid;
+  gap: 5px;
+  min-width: min(150px, 100%);
+  flex: 1;
+  justify-items: start;
+}
+.dt-closest-text .tc-bar {
+  width: 100%;
+}
+.dt-closest-name {
+  color: var(--text-0);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+/* Everything Off: one quiet line, no empty shelf */
+.dt-off {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px 16px;
+  color: var(--text-1);
+  text-decoration: none;
+  font-size: 14px;
+}
+.dt-off svg:first-child {
+  color: var(--accent-text);
+  flex: none;
+}
+.dt-off-arrow {
+  margin-left: auto;
+  flex: none;
+}
+.dt-off:hover {
+  border-color: var(--line-strong);
+  color: var(--text-0);
+}
+/* Narrow windows: the closest box goes under the shelf, the shelf scrolls sideways */
+@media (max-width: 1100px) {
+  .dt-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
